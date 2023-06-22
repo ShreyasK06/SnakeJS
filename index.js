@@ -39,6 +39,12 @@ gameStart();
 
 function gameStart() {
     scoreText.textContent = score;
+    gameType.innerText = "DIFFICULTY: EASY";
+    console.log(gameType.innerText);
+    clearBoard();
+    drawApple(appleColor, appleX, appleY);
+    drawApple(goldColor, goldX, goldY);
+    drawSnake();
     mode.addEventListener("click", checkTwoPlayer);
     if (aiGame) {
         createApple(true);
