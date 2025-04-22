@@ -10,18 +10,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <h1><a href="https://shreyask06.github.io/MyWebsite/" target="_parent">SNAKE</a></h1>
-    <h2 id="gameType"></h2>
-    <button id="mode">SWITCH GAME MODE</button>
-    <button id="resetBtn">RESET</button>
-    <div id="game">
-        <canvas id="gameBoard" width="500" height="400"></canvas>
-        <div id="score">0</div>
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
+
+    <div class="container">
+        <div class="top-controls">
+            <div class="left-controls">
+                <button id="howToPlay" class="btn-circle"><i class="fas fa-question"></i></button>
+            </div>
+            <div class="right-controls">
+                <button id="themeToggle" class="btn-circle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+
+        <header>
+            <h1><a href="https://shreyask06.github.io/MyWebsite/" target="_parent">SNAKE</a></h1>
+        </header>
+
+        <div class="game-status-row">
+            <h2 id="gameType"></h2>
+            <div class="controls">
+                <button id="mode" class="btn"><i class="fas fa-gamepad"></i>MODE</button>
+                <button id="resetBtn" class="btn"><i class="fas fa-redo-alt"></i>RESET</button>
+                <button id="closeInstructions" class="btn"><i class="fas fa-times"></i>CLOSE</button>
+            </div>
+            <div id="score">0</div>
+        </div>
+
+        <div id="game">
+            <div class="game-container">
+                <canvas id="gameBoard" width="500" height="400"></canvas>
+            </div>
+        </div>
+
+        <div id="instructionsOverlay" class="overlay">
+            <div class="instructions-content">
+                <h2>How to Play Snake</h2>
+                <div class="instruction-grid">
+                    <div class="instruction-item">
+                        <i class="fas fa-arrow-up"></i>
+                        <p>Use arrow keys to move the snake</p>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-apple-alt"></i>
+                        <p>Eat red apples to grow and earn 1 point</p>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-star"></i>
+                        <p>Eat gold apples to earn 3 points</p>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-skull-crossbones"></i>
+                        <p>Don't hit the walls or yourself!</p>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-gamepad"></i>
+                        <p>Switch between Easy and Hard modes</p>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-redo-alt"></i>
+                        <p>Press R or click Reset to start over</p>
+                    </div>
+                </div>
+                <button id="startPlaying" class="btn"><i class="fas fa-play"></i> START PLAYING</button>
+            </div>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 
